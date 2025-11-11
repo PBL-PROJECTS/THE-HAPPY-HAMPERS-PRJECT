@@ -1,0 +1,147 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f9f5f4;
+  color: #3f2d25;
+  line-height: 1.5;
+}
+
+/* Navbar */
+nav {
+  background-color: #f8e6e0;
+  text-align: center;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: #5b3a29;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #c97a63;
+}
+
+/* Header Section */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #f8e6e0;
+  border-bottom: 2px solid #e4c9c0;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: #5b3a29;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #8b6f63;
+  margin-top: 0.3rem;
+}
+
+/* Product Grid */
+main {
+  padding: 3rem 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Product Card */
+.product-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  height: 230px; /* taller for a square-like look */
+  object-fit: cover;
+}
+
+/* Text Styles */
+.product-card h3 {
+  font-size: 1.1rem;
+  color: #5b3a29;
+  margin-bottom: 0.3rem;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #6a554b;
+  margin-bottom: 0.4rem;
+}
+
+
+footer {
+  background-color: #f7dfe4;
+  text-align: center;
+  padding: 20px;
+  color: #4b393a;
+  font-size: 0.9rem;
+}
+
+
+.price {
+  font-weight: bold;
+  color: #c97a63;
+  margin-top: 0.2rem;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+button {
+  flex: 1;
+  background-color: #f8e6e0;
+  color: #5b3a29;
+  border: none;
+  border-radius: 20px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #eec9be;
+}

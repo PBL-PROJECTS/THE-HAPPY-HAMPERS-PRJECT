@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout | The Happy Hampers</title>
+
+  <style>
+    /* --- Internal styles --- */
+    :root {
+      --pink-100: #fff0f5;
+      --pink-200: #fff6f9;
+      --accent: #ff4081;
+      --muted: #555;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--pink-100);
+      color: #222;
+    }
+
+    nav { background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    nav ul { list-style: none; margin: 0; padding: 10px 20px; display: flex; gap: 12px; align-items: center; }
+    nav a { color: #333; text-decoration: none; font-weight: 600; padding: 6px 10px; border-radius: 8px; }
+    nav a.active { background: linear-gradient(135deg,#ff9eb5,#ff6b95); color: #fff; }
+
+    header { text-align: center; padding: 22px 12px 6px; }
+    header h1 { margin: 0; font-size: 24px; color: var(--accent); }
+    header .tagline { margin: 6px 0 0; color: var(--muted); }
+
+    main { display: flex; justify-content: center; padding: 20px; }
+    .checkout-container {
+      width: 420px;
+      background: var(--pink-200);
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(255,105,180,0.12);
+      border: 1px solid rgba(255,180,193,0.6);
+    }
+
+    .checkout-container h2 { color: var(--accent); margin: 0 0 16px; font-size: 20px; text-align: center; }
+    .form-group { margin-bottom: 12px; }
+    label { display: block; font-weight: 600; margin-bottom: 6px; color:#333; }
+    input[type="text"], input[type="tel"], input[type="email"], textarea, select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1.5px solid #ffb6c1;
+      background: #fff;
+      outline: none;
+      font-size: 14px;
+    }
+    textarea { min-height: 80px; resize: vertical; }
+    input:focus, textarea:focus, select:focus { border-color: #ff6b95; box-shadow: 0 0 6px rgba(255,105,180,0.15); }
+
+    .upi-section { display: none; text-align: center; margin-top: 10px; }
+    .upi-section p { margin: 8px 0 6px; color: var(--muted); }
+    .upi-section img { width: 150px; border-radius: 8px; border: 2px solid #ffd6e0; }
+
+    .total-display { margin-top: 10px; text-align: center; }
+    .total-display h3 { margin: 8px 0; color: #333; }
+
+    .place-order-btn {
+      width: 100%;
+      margin-top: 14px;
+      padding: 12px;
+      background: linear-gradient(135deg,#ff9eb5,#ff6b95);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(255,105,180,0.2);
+    }
+    .place-order-btn:hover { transform: translateY(-2px); }
+
+    footer { text-align:center; padding: 14px 0; color: var(--muted); font-size: 13px; margin-top: 18px; }
+    @media (max-width:480px){
+      .checkout-container { width: 92%; padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="homepg2.html">Home</a></li>
+      <li><a href="candle.html">Candles</a></li>
+      <li><a href="bouquet.html">Bouquets</a></li>
+      <li><a href="hamper.html">Hampers</a></li>
+      <li><a href="wishlist.html">Wishlist</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a class="active" href="checkout.html">Checkout</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>The Happy Hampers</h1>
+    <p class="tagline">Complete Your Purchase 💝</p>
+  </header>
+
+  <main>
+    <section class="checkout-container">
+      <h2>Checkout Details</h2>
+
+      <!-- Checkout Form -->
+      <form action="checkout.php" method="POST" id="checkoutForm">
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" placeholder="Enter your complete address" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="payment">Payment Method:</label>
+          <select id="payment" name="payment" required>
+            <option value="">Select a payment option</option>
+            <option value="UPI">UPI</option>
+            <option value="Cash on Delivery">Cash on Delivery</option>
+            <option value="Card">Credit/Debit Card</option>
+          </select>
+        </div>
+
+        <!-- Sample QR Code for UPI Payment -->
+        <div class="upi-section" id="upiSection">
+          <p>Scan this QR to complete your payment:</p>
+          <img src="C:\XAMPP2\htdocs\TheHappyHampers\images\qrsample.jpg" alt="UPI QR Code" class="qr-code">
+        </div>
+
+        <!-- Total Amount -->
+        <div class="form-group total-display">
+          <h3>Total Amount: ₹<span id="totalAmountDisplay">0</span></h3>
+        </div>
+
+        <input type="hidden" name="total_amount" id="hiddenTotal" value="0">
+
+        <button type="submit" class="place-order-btn">Place Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 The Happy Hampers | Crafted with Love 💕</p>
+  </footer>
+
+  <script>
+    // Read total from URL query string (sent from cart.html?total_amount=XXX)
+    const params = new URLSearchParams(window.location.search);
+    const total = params.get("total_amount");
+    const totalDisplay = document.getElementById("totalAmountDisplay");
+    const hiddenTotal = document.getElementById("hiddenTotal");
+
+    if (total) {
+      totalDisplay.textContent = total;
+      hiddenTotal.value = total;
+    } else {
+      totalDisplay.textContent = "0";
+      hiddenTotal.value = "0";
+    }
+
+    // Show QR section only when UPI selected
+    const paymentSelect = document.getElementById("payment");
+    const upiSection = document.getElementById("upiSection");
+    paymentSelect.addEventListener("change", function() {
+      if (this.value === "UPI") upiSection.style.display = "block";
+      else upiSection.style.display = "none";
+    });
+
+    // Prevent double submission
+    const form = document.getElementById('checkoutForm');
+    form.addEventListener('submit', function() {
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = "Placing order...";
+    });
+  </script>
+</body>
+</html>

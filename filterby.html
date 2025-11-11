@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+<title>Filter Products | The Happy Hampers</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background: #fff5f7;
+  }
+
+  header {
+    background-color: #da627d;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  .search-bar {
+    text-align: center;
+    margin: 20px;
+  }
+
+  .search-bar input {
+    width: 60%;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid #da627d;
+    font-size: 16px;
+  }
+
+  /* Hero Section */
+  .hero {
+height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #ffe5ec, #fff);
+    padding: 40px 60px;
+    border-radius: 20px;
+    margin: 0 40px 30px;
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+
+  .hero-text h1 {
+font-family: 'Great Vibes' , cursive;
+    font-size: 80px;
+    color: #b12a57;
+    margin-bottom: 10px;
+letter-spacing: 5px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+    color: #444;
+    max-width: 500px;
+  }
+
+  .hero-img {
+    flex: 1;
+    text-align: right;
+  }
+
+  .hero-img img {
+    width: 380px;
+    border-radius: 20px;
+  }
+
+  .container {
+    display: flex;
+    padding: 20px;
+  }
+
+  /* Sidebar Filters */
+  .filters {
+    width: 40vw;
+    background: #fff;
+    padding: 20px;
+    
+  }
+
+  .filters h3 {
+    color: #d6336c;
+    border-bottom: 2px solid #d6336c;
+    padding-bottom: 5px;
+  }
+
+  .filter-group {
+    margin: 15px 0;
+  }
+
+  label {
+font-size: 18px;
+font-weight: bold;
+    display: block;
+    margin: 5px 0;
+  }
+
+
+
+
+
+select, textarea, input[type="range"], input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 14px;
+  background: #ffcedb4d
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(214, 51, 108, 0.08);
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none; /* hides default dropdown arrows */
+}
+
+select:hover, textarea:hover, input[type="range"]:hover, 
+input[type="text"]:hover, input[type="number"]:hover {
+  background: rgba(255, 245, 247, 0.9);
+  box-shadow: 0 4px 12px rgba(214, 51, 108, 0.15);
+  transform: translateY(-2px);
+}
+
+select:focus, textarea:focus, input[type="range"]:focus, 
+input[type="text"]:focus, input[type="number"]:focus {
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.25);
+  border: 1.5px solid #d6336c;
+}
+
+select {
+  background-image: linear-gradient(90deg, #fff, #fff),
+                    url('data:image/svg+xml;utf8,<svg fill="%23d6336c" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+/*  Textarea Styling */
+textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+/*  Slider Styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 6px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #ffe5ec, #ff6b9f);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #d6336c;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #b12a57;
+}
+
+
+
+
+
+
+
+
+  /* Product Grid */
+  .product-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .product {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .product:hover {
+    transform: translateY(-5px);
+  }
+
+  .product img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .product h4 {
+    margin: 10px 0 5px;
+    color: #333;
+  }
+
+  .product p {
+    color: #d6336c;
+    font-weight: bold;
+  }
+
+  button {
+    background: #d6336c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #b12a57;
+  }
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(to top, #edc7ce, #fff3f5);
+
+}
+
+footer p {
+color: #000;
+font-size: 20px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.footer-links {
+  margin-top: 15px;
+}
+.footer-links a {
+  margin-right: 20px;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #555;
+font-weight:bold
+}
+.footer-links a:hover {
+  color: #b25a7a;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<header>🎁 Filter Products — The Happy Hampers</header>
+
+<!-- Search Bar -->
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="🔍 Search for a hamper, gift, or product...">
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Filter It !</h1>
+    <p>
+      Refine your search and find the perfect gift effortlessly.  
+      Filter by budget, occasion, gender, and more — your perfect hamper awaits!
+    </p>
+  </div>
+  <div class="hero-img">
+    <img src="C:\Users\NEEL\Downloads\cart-filterby-removebg-preview.png" alt="Filter Hero">
+  </div>
+</section>
+
+<!-- Main Section -->
+<div class="container">
+  <!-- Filters -->
+  <aside class="filters">
+    <h3>Filter By</h3>
+
+    <div class="filter-group">
+      <label for="gender">Gender:</label>
+      <select id="gender">
+        <option value="">Any</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="unisex">Unisex</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="occasion">Occasion:</label>
+      <select id="occasion">
+        <option value="">Any</option>
+        <option value="birthday">Birthday</option>
+        <option value="anniversary">Anniversary</option>
+        <option value="festive">Festive</option>
+        <option value="romantic">Romantic</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="relationship">Relationship:</label>
+      <select id="relationship">
+        <option value="">Any</option>
+        <option value="friend">Friend</option>
+        <option value="family">Family</option>
+        <option value="partner">Partner</option>
+        <option value="colleague">Colleague</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="budget">Budget (₹):</label>
+      <input type="range" id="budget" min="500" max="5000" step="100" value="2500">
+      <span id="budgetValue">₹2500</span>
+    </div>
+
+    <div class="filter-group">
+      <label for="location">Location:</label>
+      <textarea id="location" rows="2" placeholder="Enter your delivery location..."></textarea>
+    </div>
+
+    <button>Apply Filters</button>
+  </aside>
+
+  <!-- Product Grid -->
+  <section class="product-grid" id="productGrid">
+    <div class="product">
+      <img src="https://via.placeholder.com/200x180?text=Birthday+Hamper" alt="">
+      <h4>Birthday Hamper</h4>
+      <p>₹1200</p>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/200x180?text=Romantic+Candle+Set" alt="">
+      <h4>Romantic Candle Set</h4>
+      <p>₹800</p>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/200x180?text=Festive+Gift+Box" alt="">
+      <h4>Festive Gift Box</h4>
+      <p>₹2000</p>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/200x180?text=Anniversary+Bouquet" alt="">
+      <h4>Anniversary Bouquet</h4>
+      <p>₹1500</p>
+    </div>
+  </section>
+</div>
+
+<script>
+  // Budget slider live update
+  const budget = document.getElementById("budget");
+  const budgetValue = document.getElementById("budgetValue");
+  budget.oninput = () => {
+    budgetValue.textContent = `₹${budget.value}`;
+  };
+
+  // Search bar live filter
+  const searchInput = document.getElementById("searchInput");
+  const products = document.querySelectorAll(".product");
+
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    products.forEach(product => {
+      const name = product.querySelector("h4").textContent.toLowerCase();
+      product.style.display = name.includes(query) ? "block" : "none";
+    });
+  });
+</script>
+
+<!-- Footer -->
+  <footer>
+    <p><b>TheHappyHampers:)</b><br>
+       <i>"Love is Crafted , <del>Not created</del></i>.”</p>
+    <small>– Vidhi Mehta –</small>
+    <div class="footer-links">
+      <a href="homepg2.html">Home</a>
+      <a href="aboutus.html">About</a>
+           <a href="contactus2.html">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Happy Hampers | Wishlist</title>
+  <link rel="stylesheet" href="wishliststyle.css">
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="homepg2.html">Home</a></li>
+      <li><a href="candle.html">Candles</a></li>
+      <li><a href="bouquet.html">Bouquets</a></li>
+      <li><a href="hamper.html">Hampers</a></li>
+      <li><a class="active" href="wishlist.html">Wishlist</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>The Happy Hampers</h1>
+    <p class="tagline">Your Wishlist 💖</p>
+  </header>
+
+  <main>
+    <section class="wishlist-container">
+
+      <!-- 1 -->
+      <div class="wishlist-item">
+        <img src="images/rose-vanilla.jpg" alt="Rose Vanilla Candle">
+        <div class="details">
+          <h3>Rose Vanilla Candle</h3>
+          <p>A soothing mix of floral rose and creamy vanilla tones.</p>
+          <p class="price">₹549</p>
+          <div class="buttons">
+            <button class="move-btn">Move to Cart</button>
+            <button class="remove-btn">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="wishlist-item">
+        <img src="images/lavender-calm.jpg" alt="Lavender Calm Candle">
+        <div class="details">
+          <h3>Lavender Calm Candle</h3>
+          <p>Relax and unwind with the peaceful scent of lavender fields.</p>
+          <p class="price">₹549</p>
+          <div class="buttons">
+            <button class="move-btn">Move to Cart</button>
+            <button class="remove-btn">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="wishlist-item">
+        <img src="images/peach-honey.jpg" alt="Peach Honey Candle">
+        <div class="details">
+          <h3>Peach Honey Candle</h3>
+          <p>Sweet peach blended with soft honey for gentle freshness.</p>
+          <p class="price">₹519</p>
+          <div class="buttons">
+            <button class="move-btn">Move to Cart</button>
+            <button class="remove-btn">Remove</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="empty-msg" style="display: none;">
+      <h2>Your Wishlist is Empty 💫</h2>
+      <p>Start adding your favorite items now!</p>
+      <a href="homepg2.html" class="shop-btn">Continue Shopping</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 The Happy Hampers | Crafted with Love 💕</p>
+  </footer>
+
+  <script>
+    const wishlistItems = document.querySelectorAll('.wishlist-item');
+    const emptyMsg = document.querySelector('.empty-msg');
+
+    wishlistItems.forEach(item => {
+      const removeBtn = item.querySelector('.remove-btn');
+      const moveBtn = item.querySelector('.move-btn');
+
+      removeBtn.addEventListener('click', () => {
+        item.remove();
+        checkEmpty();
+      });
+
+      moveBtn.addEventListener('click', () => {
+        alert('Item moved to Cart 🛒');
+        item.remove();
+        checkEmpty();
+      });
+    });
+
+    function checkEmpty() {
+      if (document.querySelectorAll('.wishlist-item').length === 0) {
+        emptyMsg.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>

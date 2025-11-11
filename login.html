@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | TheHappyHampers</title>
+
+  <!-- 🌸 Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fff0f5 url("https://plus.unsplash.com/premium_vector-1733807262162-65b6e08a1d1a?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1509") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .open-login-btn {
+      background: linear-gradient(135deg, #ff9eb5, #ff6b95);
+      color: white;
+      border: none;
+      padding: 14px 40px;
+      border-radius: 45px;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 15px rgba(255, 107, 149, 0.5);
+    }
+
+    .open-login-btn:hover {
+      background: linear-gradient(135deg, #ff84a1, #ff4c7d);
+      transform: scale(1.07);
+      box-shadow: 0 8px 20px rgba(255, 107, 149, 0.6);
+    }
+
+    .login-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      animation: fadeIn 0.4s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .login-modal-content {
+      background-color: #fff0f6;
+      margin: 8% auto;
+      padding: 40px;
+      border: 2px solid #ffc0cb;
+      width: 380px;
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.4);
+      text-align: center;
+      animation: popup 0.4s ease;
+    }
+
+    @keyframes popup {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      color: #ff6b95;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: -10px;
+    }
+
+    .close:hover {
+      color: #e60073;
+    }
+
+    h2 {
+      color: #ff4081;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1.5px solid #ffb6c1;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input:focus {
+      border-color: #ff6b95;
+      box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+    }
+
+    button[type="submit"] {
+      background-color: #ff6b95;
+      color: white;
+      border: none;
+      padding: 12px 35px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ff4c7d;
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
+    }
+
+    p {
+      color: #555;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    a {
+      color: #ff4081;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 💗 Button to open popup -->
+  <button class="open-login-btn" onclick="document.getElementById('loginPopup').style.display='block'">
+    LOGIN 💗
+  </button>
+
+  <!-- 🌸 Popup -->
+  <div id="loginPopup" class="login-modal">
+    <div class="login-modal-content">
+      <span class="close" onclick="document.getElementById('loginPopup').style.display='none'">&times;</span>
+      <h2>Welcome Back 💫</h2>
+
+      <form action="login.php" method="POST">
+        <input type="email" name="email" placeholder="Enter email" required><br>
+    <input type="password" name="password" placeholder="Enter password" required><br>
+    <button type="submit" name="login">Login</button>
+        <p>New here? <a href="#" onclick="redirectHome()">Create Account</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Close popup when clicking outside it
+    window.onclick = function(event) {
+      const modal = document.getElementById('loginPopup');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    function redirectHome() {
+      alert("Account created! Redirecting to homepage 💖");
+      window.location.href = "homepg2.html";
+    }
+  </script>
+</body>
+</html>

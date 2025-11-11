@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Hampers | Custom Hampers</title>
+    <link rel="stylesheet" href=""C:\Users\NEEL\Downloads\style.css).txt"" />
+</head>
+
+<body>
+    <header>
+        <h1>The Happy Hampers</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Customize</a></li>
+<li><a href="#">Filter By </a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="cart.html">🛒 Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <ul>
+<h1>TRENDING</h1><br>
+<section class="product-grid">
+            <div class="product-card">
+                <img src="friendship day hamper.jpg" alt="Friendship Day Hamper" />
+                <h3>Friendship Day Hamper</h3>
+                <p>Relaxation essentials in a beautiful basket.</p>
+                <span class="price">₹2999</span>
+                <button id="friendship-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="chocolate boquet.jpg" alt="Chocolate Hamper" />
+                <h3>Chocolate Hamper</h3>
+                <p>A tasty gift for the foodie in your life.</p>
+                <span class="price">₹1299</span>
+                <button id="choco-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="rakshabandhan hamper.jpg" alt="Rakshabandhan Hamper" />
+                <h3>Rakshabandhan Hamper</h3>
+                <p>Unique hampers for a bond that’s one of a kind.</p>
+                <span class="price">₹1599</span>
+                <button id="rakhi-btn">Add to Cart</button>
+            </div>
+        </section>
+<br>
+<h1>BESTSELLER</h1><br>
+<section class="product-grid">
+            <div class="product-card">
+                <img src="friendship day hamper.jpg" alt="Friendship Day Hamper" />
+                <h3>Friendship Day Hamper</h3>
+                <p>Relaxation essentials in a beautiful basket.</p>
+                <span class="price">₹2999</span>
+                <button id="friendship-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="chocolate boquet.jpg" alt="Chocolate Hamper" />
+                <h3>Chocolate Hamper</h3>
+                <p>A tasty gift for the foodie in your life.</p>
+                <span class="price">₹1299</span>
+                <button id="choco-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="rakshabandhan hamper.jpg" alt="Rakshabandhan Hamper" />
+                <h3>Rakshabandhan Hamper</h3>
+                <p>Unique hampers for a bond that’s one of a kind.</p>
+                <span class="price">₹1599</span>
+                <button id="rakhi-btn">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 The Happy Hampers. All rights reserved.</p>
+    </footer>
+    <script>
+        document.querySelectorAll("button").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const productCard = btn.closest(".product-card");
+                const product = {
+                    name: productCard.querySelector("h3").innerText,
+                    price: productCard.querySelector(".price").innerText,
+                    image: productCard.querySelector("img").src
+                };
+
+                // Save product to localStorage
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                cart.push(product);
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                // Redirect to cart page
+                window.location.href = "cart.html";
+            });
+        });
+    </script>
+
+</body>
+
+</html>

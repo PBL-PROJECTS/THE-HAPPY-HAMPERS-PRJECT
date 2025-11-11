@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home Page 2 | The Happy Hampers</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="homepg2.css">
+</head>
+
+<body>
+
+<header>
+  <img src="images/1-removebg-preview.png" alt="Website Logo" class="logo">
+
+  <div class="heading">The Happy Hampers</div>
+
+  <nav>
+    <ul>
+      <li><a href="homepg2.html" class="active">Home</a></li>
+      <li><a href="login.html">Shop</a></li>
+      <li><a href="customize.html">Customize</a></li>
+      <li><a href="contactus2.html">Contact us</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+    </ul>
+  </nav>
+
+  <div class="top-icons">
+    <a href="wishlist.html" title="Wishlist" class="wishlist-icon">♡</a>
+    <a href="cart.php" title="Cart" class="cart-icon">🛒</a>
+  </div>
+</header>
+
+<main>
+  <div class="Items">
+    <table id="item-table">
+      <tr>
+        <td><img src="images/pincandlelogo-removebg-preview.png" alt="Candles" class="Item-img small-img"></td>
+        <td><img src="images/pinhamperlogo-removebg-preview.png" alt="Hampers" class="Item-img large-img"></td>
+        <td><img src="images/pinbouquet-removebg-preview.png" alt="Bouquets" class="Item-img"></td>
+        <td><img src="images/teddy-removebg-preview.png" alt="Customize" class="Item-img"></td>
+      </tr>
+      <tr>
+        <td><a href="candle.html" class="Item-tag">Candles</a></td>
+        <td><a href="hampers.html" class="Item-tag">Hampers</a></td>
+        <td><a href="bouquet.html" class="Item-tag">Bouquets</a></td>
+        <td><a href="customize.html" class="Item-tag">Customize</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <section class="intro">
+    <div class="welcome">
+      <div class="slide">
+        <h1 class="brand">✨ The Happy Hampers ✨</h1>
+        <p class="tagline">"Where love is crafted, not created ❤️"</p>
+      </div>
+
+      <div class="slide">
+        <h2 class="title">Customize</h2>
+        <p class="subline">it your style way! ❤️</p>
+        <a href="customize.html" class="customize-btn">Start Customizing</a>
+      </div>
+
+      <div class="slide">
+        <img src="images/1-removebg-preview.png" alt="Website Logo" class="logos3">
+        <pre><h2 class="handmade"><del>Handmade</del></h2><p class="heartmade">It's Heartmade </p></pre>
+        <a href="contactus2.html" class="contactlink">Connect with us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🩷 BESTSELLERS SECTION -->
+  <section class="bestsellers">
+    <h2 style="text-align:center;color:#b47b84;">Bestsellers</h2>
+    <div class="items">
+
+      <!-- 1 -->
+      <div class="card">
+        <img src="images/glitterroses.jpeg" alt="Glitter Roses" height="170px">
+        <div class="card-one">
+          <h1>Glitter Roses</h1>
+          <p>Specially handmade glitter roses, smell like fresh flowers but don't wilt.</p>
+          <h2>Rs.299/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Glitter Roses">
+            <input type="hidden" name="price" value="299">
+            <input type="hidden" name="image" value="images/glitterroses.jpeg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="card">
+        <img src="images/2 hbd hamp..jpeg" alt="Customized 18th Birthday Hamper" height="100px">
+        <div class="card-one">
+          <h1>Customized 18th Birthday Hamper</h1>
+          <p>Adulting got to feel a little extraordinary :)</p>
+          <h2>Rs.3999/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Customized 18th Birthday Hamper">
+            <input type="hidden" name="price" value="3999">
+            <input type="hidden" name="image" value="images/2 hbd hamp..jpeg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="card">
+        <img src="images/Pipe cleaner flower 🌸.jpg" alt="Pipe-Cleaner Lilies" height="100px">
+        <div class="card-one">
+          <h1>Pipe-Cleaner Lilies</h1>
+          <p>She loves Lilies but finding them expensive? Here you go!</p>
+          <h2>Rs.89/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Pipe-Cleaner Lilies">
+            <input type="hidden" name="price" value="89">
+            <input type="hidden" name="image" value="images/Pipe cleaner flower 🌸.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="card">
+        <img src="images/rosecandle.jpg" alt="Scented Rose Candle" height="100px">
+        <div class="card-one">
+          <h1>Scented Rose Candle</h1>
+          <p>Missing her already? We have something that smells just like her.</p>
+          <h2>Rs.299/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Scented Rose Candle">
+            <input type="hidden" name="price" value="299">
+            <input type="hidden" name="image" value="images/rosecandle.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="card">
+        <img src="images/beach candle" alt="Beach-Scented-Themed Candle" height="100px">
+        <div class="card-one">
+          <h1>Beach-Scented-Themed Candle</h1>
+          <p>We bring you the air that feels warm as sun & fresh as Lime & coconuts.</p>
+          <h2>Rs.499/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Beach-Scented-Themed Candle">
+            <input type="hidden" name="price" value="499">
+            <input type="hidden" name="image" value="images/beach candle">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 💫 TRENDING SECTION -->
+  <section class="Trending">
+    <h2 style="text-align:center;color:#b47b84;">Trending</h2>
+    <div class="items">
+
+      <div class="card">
+        <img src="images/hot wheels.jpg" alt="Hot Wheels Bouquet" height="100px">
+        <div class="card-one">
+          <h1>Hot Wheels Bouquet</h1>
+          <p>Okay that's enough! Guys need gifts too!</p>
+          <h2>Rs.399/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Hot Wheels Bouquet">
+            <input type="hidden" name="price" value="399">
+            <input type="hidden" name="image" value="images/hot wheels.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/diwali hamper 2.jpg" alt="Diwali Hamper" height="100px">
+        <div class="card-one">
+          <h1>Diwali Hamper</h1>
+          <p>Mini festive hamper for lights and smiles.</p>
+          <h2>Rs.499/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Diwali Hamper">
+            <input type="hidden" name="price" value="499">
+            <input type="hidden" name="image" value="images/diwali hamper 2.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Photo frames.jpg" alt="Customized Photoframe" height="100px">
+        <div class="card-one">
+          <h1>Customized Photoframe</h1>
+          <p>Spiral down the lane of memories with lovely photo frames.</p>
+          <h2>Rs.499/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Customized Photoframe">
+            <input type="hidden" name="price" value="499">
+            <input type="hidden" name="image" value="images/Photo frames.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/music-coded candle.jpg" alt="Music-coded Candle" height="100px">
+        <div class="card-one">
+          <h1>Music-coded Candle</h1>
+          <p>When candles can smell & sound both at once.</p>
+          <h2>Rs.299/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Music-coded Candle">
+            <input type="hidden" name="price" value="299">
+            <input type="hidden" name="image" value="images/music-coded candle.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Makeup Bouquet for your Girl.jpg" alt="Beauty Product Bouquet" height="100px">
+        <div class="card-one">
+          <h1>Beauty Product Bouquet</h1>
+          <p>Perfect Valentine’s pick for your girl!</p>
+          <h2>Rs.3499/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Beauty Product Bouquet">
+            <input type="hidden" name="price" value="3499">
+            <input type="hidden" name="image" value="images/Makeup Bouquet for your Girl.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 💕 AFFORDABLE SECTION -->
+  <section class="Affordable">
+    <h2 style="text-align:center;color:#b47b84;">Affordable Finds</h2>
+    <div class="items">
+
+      <div class="card">
+        <img src="images/CARD.jpg" alt="Handmade Cards" height="100px">
+        <div class="card-one">
+          <h1>Handmade Cards</h1>
+          <p>Creatively proven to melt down rocks of anger 💌</p>
+          <h2>Rs.149/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Handmade Cards">
+            <input type="hidden" name="price" value="149">
+            <input type="hidden" name="image" value="images/CARD.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Pipe cleaner flower 🌸.jpg" alt="Pipe-Cleaner Lilies" height="100px">
+        <div class="card-one">
+          <h1>Pipe-Cleaner Lilies</h1>
+          <p>Ultimate beauty gets affordable.</p>
+          <h2>Rs.89/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Pipe-Cleaner Lilies">
+            <input type="hidden" name="price" value="89">
+            <input type="hidden" name="image" value="images/Pipe cleaner flower 🌸.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/mini soda can hamper.jpg" alt="Mini Soda Glass Hamper" height="100px">
+        <div class="card-one">
+          <h1>Mini Soda Glass Hamper</h1>
+          <p>Affordable mini hamper for your cutiest human being.</p>
+          <h2>Rs.199/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Mini Soda Glass Hamper">
+            <input type="hidden" name="price" value="199">
+            <input type="hidden" name="image" value="images/mini soda can hamper.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Editable Birthday Magazine Template.jpg" alt="Customized Magazine" height="100px">
+        <div class="card-one">
+          <h1>Customized Magazine</h1>
+          <p>Why always Vogue? Model your loved ones!</p>
+          <h2>Rs.399/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Customized Magazine">
+            <input type="hidden" name="price" value="399">
+            <input type="hidden" name="image" value="images/Editable Birthday Magazine Template.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Vintage letter.jpg" alt="Vintage Handwritten Letters" height="100px">
+        <div class="card-one">
+          <h1>Vintage Handwritten Letters</h1>
+          <p>Can't bring Vampires, but their kind of letters surely!</p>
+          <h2>Rs.79/-</h2>
+          <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="product_name" value="Vintage Handwritten Letters">
+            <input type="hidden" name="price" value="79">
+            <input type="hidden" name="image" value="images/Vintage letter.jpg">
+            <button type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><b>TheHappyHampers:)</b><br>
+     <i>"Love is Crafted , <del>Not created</del></i>.”</p>
+  <small>– Vidhi Mehta –</small>
+  <div class="footer-links">
+    <a href="homepg2.html">Home</a>
+    <a href="aboutus.html">About</a>
+    <a href="contactus2.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

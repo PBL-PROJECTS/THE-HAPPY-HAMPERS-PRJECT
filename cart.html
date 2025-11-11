@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Happy Hampers | My Cart</title>
+  <link rel="stylesheet" href="cartstyle.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="homepg2.html">Home</a></li>
+      <li><a href="candle.html">Candles</a></li>
+      <li><a href="bouquet.html">Bouquets</a></li>
+      <li><a href="hamper.html">Hampers</a></li>
+      <li><a href="wishlist.html">Wishlist</a></li>
+      <li><a class="active" href="cart.html">Cart</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>The Happy Hampers</h1>
+    <p class="tagline">Your Shopping Cart 🛍️</p>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="cart-container">
+
+      <!-- Item 1 -->
+      <div class="cart-item" data-price="499">
+        <img src="images/vanilla-bliss.jpg" alt="Vanilla Bliss Candle">
+        <div class="details">
+          <h3>Vanilla Bliss Candle</h3>
+          <p>Warm vanilla essence that feels like a comforting hug.</p>
+          <p class="price">₹499</p>
+          <div class="quantity">
+            <button class="minus">-</button>
+            <input type="text" value="1" readonly>
+            <button class="plus">+</button>
+          </div>
+          <button class="remove-btn">Remove</button>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="cart-item" data-price="549">
+        <img src="images/rose-vanilla.jpg" alt="Rose Vanilla Candle">
+        <div class="details">
+          <h3>Rose Vanilla Candle</h3>
+          <p>A soothing mix of floral rose and creamy vanilla tones.</p>
+          <p class="price">₹549</p>
+          <div class="quantity">
+            <button class="minus">-</button>
+            <input type="text" value="1" readonly>
+            <button class="plus">+</button>
+          </div>
+          <button class="remove-btn">Remove</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="cart-summary">
+      <h2>Order Summary</h2>
+      <p>Subtotal: ₹<span id="subtotal">1048</span></p>
+      <p>Shipping: ₹99</p>
+      <hr>
+      <h3>Total: ₹<span id="total">1147</span></h3>
+
+     <!-- Checkout Form -->
+<form action="checkout.html" method="GET" id="checkoutForm">
+  <input type="hidden" name="total_amount" id="hiddenTotal" value="1147">
+  <button type="submit" class="checkout-btn">Proceed to Checkout</button>
+</form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 The Happy Hampers | Crafted with Love 💕</p>
+  </footer>
+
+  <!-- JS for cart calculations -->
+  <script>
+    const cartItems = document.querySelectorAll('.cart-item');
+    const subtotalEl = document.getElementById('subtotal');
+    const totalEl = document.getElementById('total');
+    const hiddenTotal = document.getElementById('hiddenTotal');
+    const shipping = 99;
+
+    function updateTotals() {
+      let subtotal = 0;
+      cartItems.forEach(item => {
+        const price = parseInt(item.dataset.price);
+        const qty = parseInt(item.querySelector('input').value);
+        subtotal += price * qty;
+      });
+      subtotalEl.textContent = subtotal;
+      totalEl.textContent = subtotal + shipping;
+      hiddenTotal.value = subtotal + shipping; // ✅ send total to checkout.php
+    }
+
+    cartItems.forEach(item => {
+      const minus = item.querySelector('.minus');
+      const plus = item.querySelector('.plus');
+      const input = item.querySelector('input');
+      const removeBtn = item.querySelector('.remove-btn');
+
+      plus.addEventListener('click', () => {
+        input.value = parseInt(input.value) + 1;
+        updateTotals();
+      });
+
+      minus.addEventListener('click', () => {
+        if (parseInt(input.value) > 1) {
+          input.value = parseInt(input.value) - 1;
+          updateTotals();
+        }
+      });
+
+      removeBtn.addEventListener('click', () => {
+        item.remove();
+        updateTotals();
+      });
+    });
+
+    updateTotals();
+  </script>
+
+</body>
+</html>

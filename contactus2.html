@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contactus2.css">
+<style>
+.navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #a53860;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    /* Hamburger icon */
+    .hamburger {
+      font-size: 28px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: white;
+    }
+
+    /* Hidden menu */
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 200px;
+      background: #450920;
+      padding: 10px;
+    }
+
+    .menu a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .menu a:hover {
+      background: #555;
+    }
+
+    /* Show menu when active */
+    .menu.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Contact Us</h1>
+    <p>let’s meet together</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+         Aenean commodo ligula eget dolor.</p>
+
+      <p ><strong>Address:</strong><br>Indraprastha Complex , Rasta Peth<br>Pune-411011</p>
+      <p><strong>Email:</strong><br>vidhimehta281@gmail.com</p>
+      <p><strong>Phone:</strong><br>8999492692</p>
+      <p><strong>Calling Hours:<br></strong><br>
+         Mon–Fri: 10am – 9pm<br>
+         Sat: 10am – 7pm<br>
+         Sun: 12pm – 7pm</p>
+    </div>
+
+    <div class="contact-form">
+      <h2>Drop us a line</h2>
+    <form action="/TheHappyHampers/contact_submit.php" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <input type="text" name="subject" placeholder="Subject" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map">
+    <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.2181158541334!2d73.86137047571079!3d18.519043032574185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0687547f797%3A0x49c94c7cf7d2f152!2sIndraprasth%20Complex%2C%20589%2C%20Budhwar%20Peth%2C%20Pune%2C%20Maharashtra%20411011!5e0!3m2!1sen!2sin!4v1758377870035!5m2!1sen!2sin" 
+  width="100%" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><b>TheHappyHampers:)</b><br>
+       <i>"Love is Crafted , <del>Not created</del></i>.”</p>
+    <small>– Vidhi Mehta –</small>
+    <div class="footer-links">
+      <a href="homepg2.html">Home</a>
+      <a href="aboutus.html">About</a>
+      <a href="contactus2.html">Contact</a>
+    </div>
+  </footer>
+
+<div class="navbar">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <h2></h2>
+  </div>
+
+  <!-- Dropdown Menu -->
+  <div class="menu" id="menu">
+    <a href="homepg2.html">Home</a>
+    <a href="aboutus.html">About</a>
+    <a href="#">Services</a>
+    <a href="contactus2.html">Contact</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
